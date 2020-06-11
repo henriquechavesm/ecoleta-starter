@@ -1,0 +1,106 @@
+#page-create-spot {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#page-create-spot header {
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-create-spot header a {
+  color: var(--title-color);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+#page-create-spot header a span {
+  margin-right: 8px;
+  background-image: url("../assets/arrow-left.svg");
+  display: flex;
+  width: 22px;
+  height: 22px;
+}
+
+#page-create-spot form {
+  background-color: #fff;
+  margin: 80px auto 0 auto;
+  padding: 64px;
+  border-radius: 8px;
+  max-width: 730px;
+}
+
+#page-create-spot form h1 {
+  font-size: 36px;
+}
+
+#page-create-spot form fieldset {
+  margin-top: 64px;
+  border: 0;
+}
+
+#page-create-spot form legend {
+  margin-bottom: 40px;
+}
+
+#page-create-spot form legend h2 {
+  font-size: 24px;
+}
+
+#page-create-spot form .field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+#page-create-spot form .field-group {
+  display: flex;
+}
+
+#page-create-spot form .field-group .field + .field {
+  margin-left: 24px;
+}
+
+#page-create-spot form input,
+#page-create-spot form select {
+  background-color: #f0f0f5;
+  border: 0;
+  padding: 16px 24px;
+  font-size: 16px;
+  outline-color: var(--primary-color);
+  /* outline: none; */
+  border-radius: 8px;
+}
+
+#page-create-spot form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#page-create-spot form label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#page-create-spot form button {
+  width: 260px;
+  height: 56px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  margin-top: 40px;
+  transition: background-color 200ms;
+}
+
+#page-create-spot form button:hover {
+  background-color: #2fb86e;
+}
