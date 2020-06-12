@@ -15,16 +15,16 @@ function populateUFs(ufSelect) {
 
 function populateCities(event, citySelect) {
   if (!citySelect.hasAttribute("disabled")) {
-    citySelect.setAttribute("disabled", null);
+    citySelect.setAttribute("disabled", true);
   }
+
+  citySelect.innerHTML = `<option value="">Selecione a cidade</option>`;
 
   fetch(
     `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${event.target.value}/municipios`,
   )
     .then((response) => response.json())
     .then((cities) => {
-      citySelect.innerHTML = `<option value="">Selecione a cidade</option>`;
-
       cities.forEach((city) => {
         citySelect.innerHTML += `<option value="${city.nome}">${city.nome}</option>`;
       });
