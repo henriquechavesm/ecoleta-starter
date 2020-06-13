@@ -10,7 +10,7 @@
   transition: 400ms;
 }
 
-#modal.hide {
+#modal.hidden {
   display: none;
 }
 
