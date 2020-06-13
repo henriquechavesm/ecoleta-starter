@@ -59,6 +59,9 @@
   padding: 16px 24px;
   font-size: 16px;
   color: #6c6c80;
+  outline-color: var(--primary-color);
+  outline-style: hidden;
+  -moz-outline-radius: 8px 0 0 8px;
 }
 
 #modal form .field button {
@@ -67,6 +70,7 @@
   background-color: var(--primary-color);
   border: 0;
   border-radius: 0 8px 8px 0;
+  outline: none;
   cursor: pointer;
 }
 
