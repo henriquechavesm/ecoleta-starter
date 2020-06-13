@@ -40,3 +40,25 @@ populateUFs(ufSelect);
 ufSelect.addEventListener("change", (event) => {
   populateCities(event, citySelect);
 });
+
+const itemsToCollect = document.querySelectorAll(".items-grid li");
+const collectedItems = document.querySelector("input[name=items]");
+
+let selectedItems = [];
+
+function handleSelectItem(event) {
+  const itemLi = event.target;
+  itemLi.classList.toggle("selected");
+
+  const itemId = itemLi.dataset.id;
+  const alreadySelected = selectedItems.findIndex((item) => {
+    return item === itemId;
+  });
+
+  alreadySelected >= 0 ? selectedItems.pop(itemId) : selectedItems.push(itemId);
+  collectedItems.value = selectedItems;
+}
+
+itemsToCollect.forEach((item) => {
+  item.addEventListener("click", handleSelectItem);
+});

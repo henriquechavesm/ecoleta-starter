@@ -138,3 +138,8 @@
   background: #e1faec;
   border: 2px solid #34cb79;
 }
+
+#page-create-spot .items-grid li img,
+#page-create-spot .items-grid li span {
+  pointer-events: none;
+}
