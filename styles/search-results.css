@@ -54,6 +54,10 @@
   gap: 24px;
 }
 
+#page-search-results main .card {
+  margin-bottom: 32px;
+}
+
 #page-search-results main .card img {
   display: block;
   width: 100%;
