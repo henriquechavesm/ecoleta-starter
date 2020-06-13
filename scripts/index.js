@@ -1,8 +1,8 @@
 const modal = document.querySelector("#modal");
-const buttonSearch = document.querySelector("#page-home main a");
+const buttonOpen = document.querySelector("#page-home main a");
 const buttonClose = document.querySelector("#modal .header a");
 
-buttonSearch.addEventListener("click", () => {
+buttonOpen.addEventListener("click", () => {
   modal.classList.remove("hidden");
 });
 
