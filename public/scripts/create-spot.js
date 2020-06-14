@@ -20,6 +20,10 @@ function populateCities(event, citySelect) {
 
   citySelect.innerHTML = `<option value="">Selecione a cidade</option>`;
 
+  if (+event.target.value === 0) {
+    return;
+  }
+
   fetch(
     `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${event.target.value}/municipios`,
   )
