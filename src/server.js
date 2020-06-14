@@ -4,16 +4,28 @@ const server = express();
 // Deixa a pasta pública acessível através de "/"
 server.use(express.static("public"));
 
+//utilizando template engine
+const nunjucks = require("nunjucks");
+nunjucks.configure("src/views", {
+  express: server,
+  noCache: true,
+});
+
 server.get("/", (req, res) => {
-  res.sendFile(__dirname + "/views/index.html");
+  return res.render(
+    "index.html",
+    // {
+    //   title: "Seu marketplace de coleta de resíduos.",
+    // }
+  );
 });
 
 server.get("/create-spot", (req, res) => {
-  res.sendFile(__dirname + "/views/create-spot.html");
+  return res.render("create-spot.html");
 });
 
 server.get("/search-results", (req, res) => {
-  res.sendFile(__dirname + "/views/search-results.html");
+  return res.render("search-results.html");
 });
 
 server.listen(3333);
