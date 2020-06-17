@@ -61,6 +61,9 @@ body::after {
 
 #page-search-results main .card {
   margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
 }
 
 #page-search-results main .card img {
@@ -92,4 +95,5 @@ body::after {
   font-size: 16px;
   line-height: 26px;
   color: #6c6c80;
+  margin-top: auto;
 }
