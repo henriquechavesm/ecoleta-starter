@@ -1,6 +1,8 @@
 const express = require("express");
 const server = express();
 
+const db = require("./database/db");
+
 // Deixa a pasta pública acessível através de "/"
 server.use(express.static("public"));
 
@@ -25,7 +27,14 @@ server.get("/create-spot", (req, res) => {
 });
 
 server.get("/search-results", (req, res) => {
-  return res.render("search-results.html");
+  db.all(`SELECT * FROM spots`, function (err, rows) {
+    if (err) {
+      return console.log(err);
+    }
+
+    //Mostrar a página com os dados do banco de dados
+    return res.render("search-results.html", { spots: rows });
+  });
 });
 
 server.listen(3333);
