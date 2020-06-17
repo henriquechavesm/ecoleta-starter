@@ -60,7 +60,7 @@ function handleSelectItem(event) {
   });
 
   alreadySelected >= 0 ? selectedItems.pop(itemId) : selectedItems.push(itemId);
-  collectedItems.value = selectedItems;
+  collectedItems.value = selectedItems.join(", ");
 }
 
 itemsToCollect.forEach((item) => {
