@@ -7,6 +7,7 @@
 
 {% block styles %}
 <link rel="stylesheet" href="./styles/create-spot.css">
+<link rel="stylesheet" href="./styles/modal.css">
 {% endblock styles %}
 
 
@@ -100,6 +101,12 @@
   <button type="submit">Cadastrar ponto de coleta</button>
 </form>
 {% endblock content %}
+
+{% block modal %}
+{% if saved %}
+{% include "partials/spot-created.html" %}
+{% endif %}
+{% endblock modal %}
 
 {% block scripts %}
 <script src="./scripts/create-spot.js"></script>

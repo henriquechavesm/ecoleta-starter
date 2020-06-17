@@ -57,7 +57,7 @@ server.post("/create-spot", (req, res) => {
 
     console.log("Cadastrado com sucesso");
     console.log(this);
-    return res.send("ok");
+    return res.render("create-spot.html", { saved: true });
   }
 
   // //Insert data
@@ -65,14 +65,30 @@ server.post("/create-spot", (req, res) => {
 });
 
 server.get("/search-results", (req, res) => {
-  db.all(`SELECT * FROM spots`, function (err, rows) {
-    if (err) {
-      return console.log(err);
-    }
+  const search = req.query.search;
 
-    //Mostrar a página com os dados do banco de dados
-    return res.render("search-results.html", { spots: rows });
-  });
+  if (search) {
+    db.all(
+      `SELECT * FROM spots WHERE lower(city) LIKE "%${req.query.search.toLowerCase()}%"`,
+      function (err, rows) {
+        if (err) {
+          return console.log(err);
+        }
+
+        //Mostrar a página com os dados do banco de dados
+        return res.render("search-results.html", { spots: rows });
+      },
+    );
+  } else {
+    db.all(`SELECT * FROM spots`, function (err, rows) {
+      if (err) {
+        return console.log(err);
+      }
+
+      //Mostrar a página com os dados do banco de dados
+      return res.render("search-results.html", { spots: rows });
+    });
+  }
 });
 
 server.get("/delete", (req, res) => {
